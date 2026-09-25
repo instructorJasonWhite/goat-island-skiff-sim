@@ -1,0 +1,29 @@
+{
+  "id": "greenwood_prototype",
+  "name": "Lake Greenwood training reach",
+  "approximate": true,
+  "navigational_use": false,
+  "description": "A schematic, playable training reach inspired by Lake Greenwood, South Carolina. Shorelines and islands are not surveyed or geographically exact.",
+  "source_note": "The South Carolina Department of Natural Resources describes Lake Greenwood as a long, narrow reservoir of roughly 11,400 acres. This polygon is original prototype art, not an SCDNR map or USGS shoreline.",
+  "source_url": "https://www.dnr.sc.gov/water/lakes/greenwood.pdf",
+  "coordinate_system": "local metres; +x east, +y north; heading/from_deg clockwise from north",
+  "bounds_m": {"min_x": -3500, "max_x": 3500, "min_y": -1000, "max_y": 1000},
+  "water_polygon": [
+    [-3400, 85], [-3120, 255], [-2820, 260], [-2570, 390],
+    [-2250, 355], [-1960, 510], [-1640, 435], [-1330, 560],
+    [-1010, 470], [-690, 615], [-340, 575], [30, 665],
+    [370, 570], [680, 720], [1040, 615], [1390, 795],
+    [1770, 690], [2140, 810], [2500, 625], [2790, 690],
+    [3090, 510], [3410, 430], [3410, 55], [3140, -100],
+    [2860, -80], [2580, -315], [2240, -250], [1920, -455],
+    [1540, -375], [1210, -550], [840, -470], [485, -640],
+    [120, -575], [-235, -705], [-590, -525], [-965, -610],
+    [-1310, -450], [-1660, -560], [-2000, -360], [-2320, -445],
+    [-2660, -315], [-3000, -355], [-3400, -155]
+  ],
+  "islands": [
+    [[1570, 130], [1650, 210], [1755, 190], [1820, 95], [1720, 20], [1615, 40]]
+  ],
+  "spawn": {"x_m": -450, "y_m": -40, "heading_deg": 85},
+  "wind": {"from_deg": 315, "speed_mps": 5.8, "gust_mps": 2.0}
+}

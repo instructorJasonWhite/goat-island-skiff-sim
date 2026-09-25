@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#102c32">
+  <title>Goat Island Skiff — Lake Greenwood Sail Lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="game" aria-label="Goat Island Skiff sailing game">
+    <canvas id="lake" aria-label="Third-person sailing view"></canvas>
+
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">GIS</span><span><strong>GOAT ISLAND SKIFF</strong><small>SAIL LAB · FIRST WATER</small></span></div>
+      <div class="top-actions">
+        <span class="lake-name" id="lakeName">Lake Greenwood, South Carolina</span>
+        <span class="map-warning" id="mapWarning">USGS SHORELINE · NOT FOR NAVIGATION</span>
+        <button id="viewToggle" type="button" title="Toggle first-person and third-person view (F)" aria-pressed="false">First person · F</button>
+        <button id="loadMap" type="button" title="Load a map JSON file">+ Load lake</button>
+        <input id="mapFile" type="file" accept=".json,application/json" hidden>
+        <button id="pause" type="button">Pause</button>
+      </div>
+    </header>
+
+    <section class="panel telemetry" aria-label="Sailing instruments">
+      <div class="panel-title"><span class="signal-dot"></span> LIVE SAILING DATA</div>
+      <div class="speed"><strong id="speed">0.0</strong><span>knots<br><small>BOAT SPEED</small></span></div>
+      <div id="distanceSailed" class="distance-sailed">0 m sailed</div>
+      <div class="instrument-grid">
+        <div><small>POINT OF SAIL</small><strong id="point">Beam reach</strong></div>
+        <div><small>WIND FROM BOW</small><strong id="apparent">0° AHEAD</strong></div>
+        <div><small>HEEL</small><strong id="heel">0°</strong></div>
+        <div><small>LEEWAY</small><strong id="leeway">0°</strong></div>
+      </div>
+      <div class="wind-row"><span class="wind-icon" aria-hidden="true"><span class="wind-bow">▲</span><span class="wind-needle" id="windArrow">➤</span></span><span><strong id="windReadout">Apparent 0.0 kt</strong><small id="windFrom">from dead ahead</small><small id="trueWind">True wind 0.0 kt</small></span></div>
+      <div class="meter"><span>HEEL &amp; CAPSIZE RISK</span><div class="track"><i id="heelMeter"></i></div><b id="riskLabel">LOW</b></div>
+    </section>
+
+    <section class="panel course" aria-label="Course and map">
+      <div class="panel-title" id="courseTitle">LAKE GREENWOOD SAILING</div>
+      <button id="openMap" class="map-open" type="button" aria-label="Open enlarged lake map" aria-haspopup="dialog" aria-controls="mapDialog">
+        <canvas id="minimap" width="240" height="104" aria-hidden="true"></canvas>
+        <span class="map-open-label">CLICK TO EXPAND ↗</span>
+      </button>
+      <div class="course-row"><span class="mark-dot"></span><span><small>NEXT MARK</small><strong id="courseMark">Windward buoy</strong></span><b id="courseDist">—</b></div>
+      <div class="course-footer"><span id="lap">Lap 1</span><span id="mapTag">USGS SHORELINE</span></div>
+      <p id="mapNotice">GIS shoreline outline. Depth, hazards and live water levels are not modeled.</p>
+    </section>
+
+    <button id="openMapCompact" class="map-fab" type="button" aria-label="Open enlarged lake map" aria-haspopup="dialog" aria-controls="mapDialog">Map</button>
+
+    <dialog id="mapDialog" class="map-dialog" aria-labelledby="mapDialogTitle">
+      <div class="map-dialog-head">
+        <div><small>YOUR POSITION</small><h2 id="mapDialogTitle">Lake Greenwood</h2></div>
+        <button id="closeMap" type="button" aria-label="Close enlarged lake map">Close ×</button>
+      </div>
+      <canvas id="largeMap" width="720" height="312" role="img" aria-label="Lake map showing your boat and heading"></canvas>
+      <p id="mapPositionText" class="map-position-text"></p>
+      <p class="map-pause-note">Sailing is paused while this map is open.</p>
+    </dialog>
+
+    <section class="panel controls" aria-label="Boat controls">
+      <div class="panel-title">HELM &amp; TRIM <span>LIVE</span></div>
+      <div class="control-row"><label for="sheet">Sail sheet <small>W trim in · S ease</small></label><output id="sheetValue">55%</output></div>
+      <input id="sheet" type="range" min="0" max="100" value="55" aria-label="Sail sheet trim">
+      <div class="range-ends"><span>OUT</span><span>IN</span></div>
+      <div class="control-row crew-row"><label for="crew">Crew position <small>A port · D starboard</small></label><output id="crewValue">CENTER</output></div>
+      <input id="crew" type="range" min="-100" max="100" value="0" aria-label="Crew position">
+      <div class="range-ends"><span>PORT</span><span>STARBOARD</span></div>
+      <div class="toggle-row"><button id="board" type="button">Centerboard <b>DOWN</b><small>C</small></button><button id="rudderBlade" type="button">Rudder blade <b>DOWN</b><small>V</small></button><button id="hoist" type="button">Sail <b>RAISED</b><small>H</small></button></div>
+      <div class="mouse-hint">DRAG TILLER · BOW TURNS OPPOSITE</div>
+      <div class="helm-row"><button id="port" type="button" aria-label="Steer port">↶ PORT</button><span>STEER<br><small>← / →</small></span><button id="starboard" type="button" aria-label="Steer starboard">STARBOARD ↷</button></div>
+    </section>
+
+    <div class="bottom-strip"><span id="status">Catch the wind, trim the sheet, and round the buoys.</span><span>Drag tiller · wheel sheet · F view · C board · V rudder · H sail · R recover · SPACE pause</span></div>
+    <div id="banner" class="banner" hidden><strong id="bannerTitle"></strong><span id="bannerText"></span><button id="bannerAction" type="button">Reset boat</button></div>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </main>
+  <script src="physics.js"></script>
+  <script src="input.js"></script>
+  <script src="wind_indicator.js"></script>
+  <script src="fallback-map.js"></script>
+  <script src="view3d.js"></script>
+  <script src="map_view.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

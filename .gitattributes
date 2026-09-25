@@ -1,0 +1,10 @@
+# Keep native art and Unreal assets opaque to line-based merges.
+*.uasset -text
+*.umap -text
+*.blend -text
+*.fbx -text
+*.glb -text
+*.r16 -text
+*.png -text
+*.jpg -text
+*.jpeg -text

@@ -1,0 +1,457 @@
+{
+  "name": "Lake Greenwood NAIP aerial terrain color",
+  "source": "USGS National Map NAIP Imagery, USDA Farm Service Agency",
+  "service_url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+  "terms_url": "https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip",
+  "license": "Public domain (USGS states its NAIP imagery download is public domain)",
+  "attribution": "USGS, USDA, The National Map: Orthoimagery",
+  "retrieved_utc": "2026-09-25T00:51:35.568900+00:00",
+  "request_bbox_lonlat": [
+    -82.21618098159459,
+    34.12084070994477,
+    -81.86556601840542,
+    34.410601290055226
+  ],
+  "source_tile_grid": [
+    4,
+    4
+  ],
+  "source_tile_pixels": [
+    1024,
+    847
+  ],
+  "source_tiles": [
+    {
+      "row": 0,
+      "column": 0,
+      "request_url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-82.217057519003%2C34.337436743577%2C-82.127650703389%2C34.411325691506&bboxSR=4326&imageSR=4326&size=1024%2C847&format=jpg&interpolation=RSP_BilinearInterpolation&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D&f=json",
+      "requested_bbox_lonlat": [
+        -82.21618098159459,
+        34.33816114502761,
+        -82.1285272407973,
+        34.410601290055226
+      ],
+      "returned_bbox_lonlat": [
+        -82.217057519003,
+        34.33740486362301,
+        -82.127650703389,
+        34.41135757145999
+      ],
+      "crop_pixel_edges_in_source": [
+        10.039215691265838,
+        8.661891749051476,
+        1013.9607843100363,
+        838.338108252739
+      ],
+      "source_jpg": "usgs_naip_pad01_r0_c0.jpg",
+      "source_jpg_sha256": "d81e40a398e541adb7905831e85124ee7f4f558b29102fc3360f9025e3af4556",
+      "source_jpg_bytes": 263062
+    },
+    {
+      "row": 0,
+      "column": 1,
+      "request_url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-82.129403778205%2C34.337436743577%2C-82.039996962592%2C34.411325691506&bboxSR=4326&imageSR=4326&size=1024%2C847&format=jpg&interpolation=RSP_BilinearInterpolation&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D&f=json",
+      "requested_bbox_lonlat": [
+        -82.1285272407973,
+        34.33816114502761,
+        -82.0408735,
+        34.410601290055226
+      ],
+      "returned_bbox_lonlat": [
+        -82.12940377820502,
+        34.33740486362342,
+        -82.03999696259201,
+        34.41135757145957
+      ],
+      "crop_pixel_edges_in_source": [
+        10.039215683403858,
+        8.661891744347407,
+        1013.9607843135037,
+        838.3381082573616
+      ],
+      "source_jpg": "usgs_naip_pad01_r0_c1.jpg",
+      "source_jpg_sha256": "604b4d7f621dc2ecb151221401e728a9c5b0e5d17302904bdec393e63031fe22",
+      "source_jpg_bytes": 252876
+    },
+    {
+      "row": 0,
+      "column": 2,
+      "request_url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-82.041750037408%2C34.337436743577%2C-81.952343221795%2C34.411325691506&bboxSR=4326&imageSR=4326&size=1024%2C847&format=jpg&interpolation=RSP_BilinearInterpolation&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D&f=json",
+      "requested_bbox_lonlat": [
+        -82.0408735,
+        34.33816114502761,
+        -81.95321975920271,
+        34.410601290055226
+      ],
+      "returned_bbox_lonlat": [
+        -82.041750037408,
+        34.337404863623426,
+        -81.952343221795,
+        34.41135757145956
+      ],
+      "crop_pixel_edges_in_source": [
+        10.039215686497906,
+        8.661891744267692,
+        1013.9607843167573,
+        838.3381082574413
+      ],
+      "source_jpg": "usgs_naip_pad01_r0_c2.jpg",
+      "source_jpg_sha256": "1fcfe13536268894eb03a6b5669eb59f3992f8d254f11bf574845868379ec2bf",
+      "source_jpg_bytes": 239855
+    },
+    {
+      "row": 0,
+      "column": 3,
+      "request_url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-81.954096296611%2C34.337436743577%2C-81.864689480997%2C34.411325691506&bboxSR=4326&imageSR=4326&size=1024%2C847&format=jpg&interpolation=RSP_BilinearInterpolation&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D&f=json",
+      "requested_bbox_lonlat": [
+        -81.95321975920271,
+        34.33816114502761,
+        -81.86556601840542,
+        34.410601290055226
+      ],
+      "returned_bbox_lonlat": [
+        -81.954096296611,
+        34.337404863623014,
+        -81.864689480997,
+        34.41135757145998
+      ],
+      "crop_pixel_edges_in_source": [
+        10.039215689802587,
+        8.66189174897176,
+        1013.9607843087325,
+        838.3381082528186
+      ],
+      "source_jpg": "usgs_naip_pad01_r0_c3.jpg",
+      "source_jpg_sha256": "72bc47705cf837fd8437d714afa7bbb4ec63c19a722bcc30ba44851629c9426c",
+      "source_jpg_bytes": 237115
+    },
+    {
+      "row": 1,
+      "column": 0,
+      "request_url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-82.217057519003%2C34.264996598550%2C-82.127650703389%2C34.338885546478&bboxSR=4326&imageSR=4326&size=1024%2C847&format=jpg&interpolation=RSP_BilinearInterpolation&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D&f=json",
+      "requested_bbox_lonlat": [
+        -82.21618098159459,
+        34.265721,
+        -82.1285272407973,
+        34.33816114502761
+      ],
+      "returned_bbox_lonlat": [
+        -82.217057519003,
+        34.26496471859551,
+        -82.127650703389,
+        34.33891742643249
+      ],
+      "crop_pixel_edges_in_source": [
+        10.039215691265838,
+        8.661891750353561,
+        1013.9607843100363,
+        838.338108254041
+      ],
+      "source_jpg": "usgs_naip_pad01_r1_c0.jpg",
+      "source_jpg_sha256": "049585e40de86ad33ac8717177b9d11abc83e01ef38011b0152584afb9d61dc4",
+      "source_jpg_bytes": 262757
+    },
+    {
+      "row": 1,
+      "column": 1,
+      "request_url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-82.129403778205%2C34.264996598550%2C-82.039996962592%2C34.338885546478&bboxSR=4326&imageSR=4326&size=1024%2C847&format=jpg&interpolation=RSP_BilinearInterpolation&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D&f=json",
+      "requested_bbox_lonlat": [
+        -82.1285272407973,
+        34.265721,
+        -82.0408735,
+        34.33816114502761
+      ],
+      "returned_bbox_lonlat": [
+        -82.12940377820502,
+        34.26496471859592,
+        -82.03999696259201,
+        34.33891742643207
+      ],
+      "crop_pixel_edges_in_source": [
+        10.039215683403858,
+        8.661891745649493,
+        1013.9607843135037,
+        838.3381082586636
+      ],
+      "source_jpg": "usgs_naip_pad01_r1_c1.jpg",
+      "source_jpg_sha256": "68c9246a2fd60a45158cc13cff83252e713bb6e93fcee73dce36edf84cbb7e80",
+      "source_jpg_bytes": 257781
+    },
+    {
+      "row": 1,
+      "column": 2,
+      "request_url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-82.041750037408%2C34.264996598550%2C-81.952343221795%2C34.338885546478&bboxSR=4326&imageSR=4326&size=1024%2C847&format=jpg&interpolation=RSP_BilinearInterpolation&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D&f=json",
+      "requested_bbox_lonlat": [
+        -82.0408735,
+        34.265721,
+        -81.95321975920271,
+        34.33816114502761
+      ],
+      "returned_bbox_lonlat": [
+        -82.041750037408,
+        34.26496471859593,
+        -81.952343221795,
+        34.33891742643206
+      ],
+      "crop_pixel_edges_in_source": [
+        10.039215686497906,
+        8.661891745569777,
+        1013.9607843167573,
+        838.3381082587434
+      ],
+      "source_jpg": "usgs_naip_pad01_r1_c2.jpg",
+      "source_jpg_sha256": "d84aebd32fa5ffcc6ecdf37e2d6469fc3af80d5bebec75dab8297aa23aa25a0b",
+      "source_jpg_bytes": 247207
+    },
+    {
+      "row": 1,
+      "column": 3,
+      "request_url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-81.954096296611%2C34.264996598550%2C-81.864689480997%2C34.338885546478&bboxSR=4326&imageSR=4326&size=1024%2C847&format=jpg&interpolation=RSP_BilinearInterpolation&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D&f=json",
+      "requested_bbox_lonlat": [
+        -81.95321975920271,
+        34.265721,
+        -81.86556601840542,
+        34.33816114502761
+      ],
+      "returned_bbox_lonlat": [
+        -81.954096296611,
+        34.264964718595515,
+        -81.864689480997,
+        34.33891742643248
+      ],
+      "crop_pixel_edges_in_source": [
+        10.039215689802587,
+        8.661891750273846,
+        1013.9607843087325,
+        838.3381082541207
+      ],
+      "source_jpg": "usgs_naip_pad01_r1_c3.jpg",
+      "source_jpg_sha256": "1ea754314af3da14ef51a0e83c024ac9ae2ed1e2009d80e1810a3845262c2d76",
+      "source_jpg_bytes": 236894
+    },
+    {
+      "row": 2,
+      "column": 0,
+      "request_url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-82.217057519003%2C34.192556453522%2C-82.127650703389%2C34.266445401450&bboxSR=4326&imageSR=4326&size=1024%2C847&format=jpg&interpolation=RSP_BilinearInterpolation&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D&f=json",
+      "requested_bbox_lonlat": [
+        -82.21618098159459,
+        34.193280854972386,
+        -82.1285272407973,
+        34.265721
+      ],
+      "returned_bbox_lonlat": [
+        -82.217057519003,
+        34.19252457356751,
+        -82.127650703389,
+        34.26647728140449
+      ],
+      "crop_pixel_edges_in_source": [
+        10.039215691265838,
+        8.661891745959023,
+        1013.9607843100363,
+        838.3381082496464
+      ],
+      "source_jpg": "usgs_naip_pad01_r2_c0.jpg",
+      "source_jpg_sha256": "9ddd64826fe505607166b93921c5b4b7016e18f0e3cf8b27ce27d11696e83545",
+      "source_jpg_bytes": 310220
+    },
+    {
+      "row": 2,
+      "column": 1,
+      "request_url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-82.129403778205%2C34.192556453522%2C-82.039996962592%2C34.266445401450&bboxSR=4326&imageSR=4326&size=1024%2C847&format=jpg&interpolation=RSP_BilinearInterpolation&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D&f=json",
+      "requested_bbox_lonlat": [
+        -82.1285272407973,
+        34.193280854972386,
+        -82.0408735,
+        34.265721
+      ],
+      "returned_bbox_lonlat": [
+        -82.12940377820502,
+        34.19252457356792,
+        -82.03999696259201,
+        34.26647728140407
+      ],
+      "crop_pixel_edges_in_source": [
+        10.039215683403858,
+        8.661891741254953,
+        1013.9607843135037,
+        838.3381082542692
+      ],
+      "source_jpg": "usgs_naip_pad01_r2_c1.jpg",
+      "source_jpg_sha256": "62378881ab4a886921edede1fbe9d720d0fbf37d95a15fec709d40994c206a90",
+      "source_jpg_bytes": 269725
+    },
+    {
+      "row": 2,
+      "column": 2,
+      "request_url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-82.041750037408%2C34.192556453522%2C-81.952343221795%2C34.266445401450&bboxSR=4326&imageSR=4326&size=1024%2C847&format=jpg&interpolation=RSP_BilinearInterpolation&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D&f=json",
+      "requested_bbox_lonlat": [
+        -82.0408735,
+        34.193280854972386,
+        -81.95321975920271,
+        34.265721
+      ],
+      "returned_bbox_lonlat": [
+        -82.041750037408,
+        34.19252457356793,
+        -81.952343221795,
+        34.266477281404065
+      ],
+      "crop_pixel_edges_in_source": [
+        10.039215686497906,
+        8.661891741175237,
+        1013.9607843167573,
+        838.3381082543488
+      ],
+      "source_jpg": "usgs_naip_pad01_r2_c2.jpg",
+      "source_jpg_sha256": "52a74c5ac1d310aab412b8b66bf1c145199373f91bad6e717366a991d65834db",
+      "source_jpg_bytes": 246941
+    },
+    {
+      "row": 2,
+      "column": 3,
+      "request_url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-81.954096296611%2C34.192556453522%2C-81.864689480997%2C34.266445401450&bboxSR=4326&imageSR=4326&size=1024%2C847&format=jpg&interpolation=RSP_BilinearInterpolation&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D&f=json",
+      "requested_bbox_lonlat": [
+        -81.95321975920271,
+        34.193280854972386,
+        -81.86556601840542,
+        34.265721
+      ],
+      "returned_bbox_lonlat": [
+        -81.954096296611,
+        34.19252457356752,
+        -81.864689480997,
+        34.266477281404484
+      ],
+      "crop_pixel_edges_in_source": [
+        10.039215689802587,
+        8.661891745879307,
+        1013.9607843087325,
+        838.3381082497261
+      ],
+      "source_jpg": "usgs_naip_pad01_r2_c3.jpg",
+      "source_jpg_sha256": "2bcd9bb3e8bade6a00e2516f9bf4d25c1708bb8663071dffc7a30a311f43afac",
+      "source_jpg_bytes": 231496
+    },
+    {
+      "row": 3,
+      "column": 0,
+      "request_url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-82.217057519003%2C34.120116308494%2C-82.127650703389%2C34.194005256423&bboxSR=4326&imageSR=4326&size=1024%2C847&format=jpg&interpolation=RSP_BilinearInterpolation&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D&f=json",
+      "requested_bbox_lonlat": [
+        -82.21618098159459,
+        34.12084070994477,
+        -82.1285272407973,
+        34.193280854972386
+      ],
+      "returned_bbox_lonlat": [
+        -82.217057519003,
+        34.12008442854001,
+        -82.127650703389,
+        34.19403713637699
+      ],
+      "crop_pixel_edges_in_source": [
+        10.039215691265838,
+        8.661891747261109,
+        1013.9607843100363,
+        838.3381082509486
+      ],
+      "source_jpg": "usgs_naip_pad01_r3_c0.jpg",
+      "source_jpg_sha256": "ce603c2a5f4f353716eb9a5978d48b4a90c538c87eb9d793e67516f64fa4f922",
+      "source_jpg_bytes": 295084
+    },
+    {
+      "row": 3,
+      "column": 1,
+      "request_url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-82.129403778205%2C34.120116308494%2C-82.039996962592%2C34.194005256423&bboxSR=4326&imageSR=4326&size=1024%2C847&format=jpg&interpolation=RSP_BilinearInterpolation&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D&f=json",
+      "requested_bbox_lonlat": [
+        -82.1285272407973,
+        34.12084070994477,
+        -82.0408735,
+        34.193280854972386
+      ],
+      "returned_bbox_lonlat": [
+        -82.12940377820502,
+        34.12008442854042,
+        -82.03999696259201,
+        34.19403713637657
+      ],
+      "crop_pixel_edges_in_source": [
+        10.039215683403858,
+        8.661891742557039,
+        1013.9607843135037,
+        838.3381082555712
+      ],
+      "source_jpg": "usgs_naip_pad01_r3_c1.jpg",
+      "source_jpg_sha256": "2ff068f0dfda14a46cbf9c95ac73991ff7f8195ecf0037ced005ca46d75f1e7e",
+      "source_jpg_bytes": 266421
+    },
+    {
+      "row": 3,
+      "column": 2,
+      "request_url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-82.041750037408%2C34.120116308494%2C-81.952343221795%2C34.194005256423&bboxSR=4326&imageSR=4326&size=1024%2C847&format=jpg&interpolation=RSP_BilinearInterpolation&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D&f=json",
+      "requested_bbox_lonlat": [
+        -82.0408735,
+        34.12084070994477,
+        -81.95321975920271,
+        34.193280854972386
+      ],
+      "returned_bbox_lonlat": [
+        -82.041750037408,
+        34.12008442854043,
+        -81.952343221795,
+        34.194037136376565
+      ],
+      "crop_pixel_edges_in_source": [
+        10.039215686497906,
+        8.661891742477323,
+        1013.9607843167573,
+        838.3381082556509
+      ],
+      "source_jpg": "usgs_naip_pad01_r3_c2.jpg",
+      "source_jpg_sha256": "d6cf0fadff21e55cb89722c4df8fb4c85b96f9914feba6a1d4c34cb2e6b14adc",
+      "source_jpg_bytes": 256708
+    },
+    {
+      "row": 3,
+      "column": 3,
+      "request_url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-81.954096296611%2C34.120116308494%2C-81.864689480997%2C34.194005256423&bboxSR=4326&imageSR=4326&size=1024%2C847&format=jpg&interpolation=RSP_BilinearInterpolation&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D&f=json",
+      "requested_bbox_lonlat": [
+        -81.95321975920271,
+        34.12084070994477,
+        -81.86556601840542,
+        34.193280854972386
+      ],
+      "returned_bbox_lonlat": [
+        -81.954096296611,
+        34.12008442854002,
+        -81.864689480997,
+        34.194037136376984
+      ],
+      "crop_pixel_edges_in_source": [
+        10.039215689802587,
+        8.661891747181393,
+        1013.9607843087325,
+        838.3381082510282
+      ],
+      "source_jpg": "usgs_naip_pad01_r3_c3.jpg",
+      "source_jpg_sha256": "9931bc46107811fd179fab479cdc97974739c5fac341997be4a91f75b0da27f0",
+      "source_jpg_bytes": 247318
+    }
+  ],
+  "output_pixels": [
+    4096,
+    4096
+  ],
+  "output_metres_per_pixel": 7.875,
+  "output_edge_bounds_local_m": [
+    -16128.0,
+    -16128.0,
+    16128.0,
+    16128.0
+  ],
+  "output_orientation": "top row north; left column west",
+  "unreal_uv": "U=(column/(GridWidth-1)); V=(row/(GridHeight-1)) on terrain vertices",
+  "output_png_sha256": "71dfb2b313bbd67edb2e046e746735f43e756e4574af202171b3b1bb7586df83",
+  "qa_image": "greenwood_naip_alignment_qa.jpg",
+  "note": "NAIP is historic aerial photography. Road/shoreline changes after acquisition are possible. The image is a downsampled visual texture, not a navigational chart."
+}

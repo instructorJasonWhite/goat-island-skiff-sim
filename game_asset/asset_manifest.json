@@ -1,0 +1,79 @@
+{
+  "source": "Goat_Island_Skiff.blend",
+  "game_blend": "Goat_Island_Skiff_Game.blend",
+  "skeletal_mesh": "SK_Goat_Island_Skiff.fbx",
+  "animations": {
+    "TillerPortStarboard": "A_Goat_Island_Skiff_TillerPortStarboard.fbx",
+    "RudderBladeLift": "A_Goat_Island_Skiff_RudderBladeLift.fbx",
+    "CenterboardLift": "A_Goat_Island_Skiff_CenterboardLift.fbx",
+    "TackPortToStarboard": "A_Goat_Island_Skiff_TackPortToStarboard.fbx",
+    "JibeStarboardToPort": "A_Goat_Island_Skiff_JibeStarboardToPort.fbx",
+    "SailRaiseLower": "A_Goat_Island_Skiff_SailRaiseLower.fbx"
+  },
+  "glb_preview": "Preview_Goat_Island_Skiff.glb",
+  "metres_per_unit": 1.0,
+  "axes": "+X bow, +Y starboard, +Z up",
+  "meshes": {
+    "static": {
+      "name": "Hull_and_Fixed_Mast",
+      "vertices": 16465,
+      "triangles": 29107
+    },
+    "stock": {
+      "name": "Rudder_Stock_and_Tiller",
+      "vertices": 1418,
+      "triangles": 2644
+    },
+    "blade": {
+      "name": "Rudder_Sliding_Blade",
+      "vertices": 746,
+      "triangles": 1252
+    },
+    "board": {
+      "name": "Sliding_Centerboard",
+      "vertices": 110,
+      "triangles": 188
+    },
+    "boom": {
+      "name": "Boom_and_Fittings",
+      "vertices": 720,
+      "triangles": 1164
+    },
+    "yard": {
+      "name": "Yard_and_Lacings",
+      "vertices": 480,
+      "triangles": 684
+    },
+    "sail": {
+      "name": "Sail_Cloth",
+      "vertices": 7946,
+      "triangles": 14996
+    }
+  },
+  "triangle_total": 50035,
+  "bones": [
+    "Root",
+    "RudderYaw",
+    "RudderBladeSlide",
+    "ShockCordBlade",
+    "ShockCordStock",
+    "CenterboardSlide",
+    "SailSwing",
+    "SailHoist",
+    "HalyardYard",
+    "SheetBoom",
+    "DownhaulBoom",
+    "HalyardMast",
+    "SheetTraveller",
+    "DownhaulDeck"
+  ],
+  "morph_targets": [
+    "Sail_Cloth:Furled"
+  ],
+  "fir_texture": "fir_varnished_basecolor.png",
+  "missing_dynamic_rope_meshes": [
+    "Halyard to yard",
+    "Downhaul",
+    "Mainsheet upper fall"
+  ]
+}

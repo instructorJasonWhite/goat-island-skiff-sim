@@ -1,0 +1,94 @@
+{
+  "lake_id": "lake_greenwood_south_carolina",
+  "width": 2017,
+  "height": 2017,
+  "x_min_m": -16128.0,
+  "y_min_m": -16128.0,
+  "x_max_m": 16128.0,
+  "y_max_m": 16128.0,
+  "sample_spacing_m": 16,
+  "row_0_is_north": true,
+  "water_elevation_m": 132.64923095703125,
+  "water_plane_world_z_m": 0.0,
+  "r16_file": "greenwood_2017_s16m.r16",
+  "r16_zero_code": 32768,
+  "r16_world_cm_per_code": 0.78125,
+  "source": {
+    "name": "USGS 3DEP Bare Earth DEM Dynamic ImageServer",
+    "service_url": "https://elevation.nationalmap.gov/arcgis/rest/services/3DEPElevation/ImageServer",
+    "request_url": "https://elevation.nationalmap.gov/arcgis/rest/services/3DEPElevation/ImageServer/exportImage?bbox=-82.216267939671%2C34.120768844722%2C-81.865479060329%2C34.410673155278&bboxSR=4326&imageSR=4326&size=2017%2C2017&pixelType=F32&format=tiff&f=image&interpolation=RSP_BilinearInterpolation",
+    "retrieved_utc": "2026-09-25T00:02:41+00:00",
+    "raw_tiff": "greenwood_2017_s16m_3dep_f32.tif",
+    "raw_tiff_sha256": "d72c4c6fd3cdcb95879de067f08419c5e60d26c1cd072a2a475a6d148205de76",
+    "actual_tiff_extent_lonlat": [
+      -82.21626793967101,
+      34.090326560329,
+      -81.86547906032901,
+      34.441115439671
+    ],
+    "actual_tiff_pixel_size_degrees": [
+      0.00017391615237580819,
+      0.00017391615237580819
+    ],
+    "alignment": "GeoTIFF tiepoint and pixel scale used to resample each Landscape vertex",
+    "vertical_datum": "NAVD88 metres is standard for CONUS 3DEP; inspect source raster metadata for exact source lineage",
+    "license": "USGS 3DEP: public domain, no use restrictions; credit USGS"
+  },
+  "grid": {
+    "width_vertices": 2017,
+    "height_vertices": 2017,
+    "vertex_spacing_m": 16,
+    "local_origin_lon_deg": -82.0408735,
+    "local_origin_lat_deg": 34.265721,
+    "local_vertex_bounds_m": [
+      -16128.0,
+      -16128.0,
+      16128.0,
+      16128.0
+    ],
+    "request_bbox_lonlat_pixel_edges": [
+      -82.21626793967077,
+      34.12076884472153,
+      -81.86547906032924,
+      34.41067315527847
+    ],
+    "row_zero_is_north": true,
+    "column_zero_is_west": true,
+    "center_vertex_row_col": [
+      1008,
+      1008
+    ],
+    "coordinate_system": "same local equirectangular east/north metres as greenwood_usgs.json"
+  },
+  "elevation": {
+    "min_m": 49.12223434448242,
+    "max_m": 214.07481384277344,
+    "water_level_estimate": {
+      "median_m": 132.64923095703125,
+      "p05_m": 132.64923095703125,
+      "p95_m": 132.64923095703125,
+      "sample_count": 7347,
+      "method": "median of USGS hydroflattened DEM cells inside lake polygon, islands excluded",
+      "reference_local_xy_m": [
+        0.0,
+        0.0
+      ],
+      "reference_radius_m": 1500,
+      "shore_buffer_m": 48
+    },
+    "note": "DEM is hydroflattened terrain, not bathymetry or a current lake gauge reading"
+  },
+  "unreal_landscape_import": {
+    "heightmap_file": "greenwood_2017_s16m.r16",
+    "format": "R16 unsigned little-endian, row-major",
+    "x_scale_cm": 1600,
+    "y_scale_cm": 1600,
+    "z_scale": 100.0,
+    "actor_location_z_cm": 0,
+    "zero_elevation_m_navd88": 132.64923095703125,
+    "height_formula": "world_z_cm = (R16 - 32768) * z_scale / 128",
+    "water_plane_world_z_cm": 0,
+    "orientation_note": "Grid columns increase east and rows increase south; check Unreal Flip Y Axis so north is +world Y"
+  },
+  "qa_image": "greenwood_2017_s16m_qa.png"
+}

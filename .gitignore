@@ -1,0 +1,41 @@
+# Unreal build output and machine-local state
+**/Binaries/
+**/Intermediate/
+**/Saved/
+**/DerivedDataCache/
+**/.vs/
+**/Build/Windows/FileOpenOrder/
+**/*.pdb
+**/*.obj
+**/*.exe
+**/*.dll
+
+# Generated test and language caches
+**/__pycache__/
+**/*.py[cod]
+**/Tests/build/
+**/tests/build/
+**/node_modules/
+
+# Blender backups and duplicated release bundles
+**/*.blend1
+**/*.blend2
+*.zip
+/gis_game/package_release.py
+
+# GIS downloads with uncertain state-service redistribution terms, and
+# reproducible imagery/elevation download caches
+/gis_game/maps/landmarks/raw/
+/gis_game/maps/terrain/*_3dep_f32.tif
+/gis_game/maps/imagery/usgs_naip_pad*.jpg
+/gis_game/maps/imagery/usgs_naip_pad*_response.json
+
+# Browser QA captures; source code renders these at runtime
+/gis_game/web/qa/
+/gis_game/web/*.png
+
+# Earlier local authoring experiments and duplicate Unreal content
+/gis_unreal_authoring/
+/hull_qa/
+/tests/
+/Goat_Island_Skiff*.png

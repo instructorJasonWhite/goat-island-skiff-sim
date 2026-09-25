@@ -1,0 +1,569 @@
+{
+  "schema_version": 1,
+  "map_id": "lake_greenwood_south_carolina",
+  "generated_from_extracts_on": "2026-09-24",
+  "navigational_use": false,
+  "origin": {
+    "longitude": -82.0408735,
+    "latitude": 34.265721
+  },
+  "coordinate_system": "local east/north metres; +east/+north; bearing clockwise from north",
+  "sources": [
+    {
+      "id": "scdot_bridges",
+      "title": "South Carolina DOT Bridges feature layer",
+      "url": "https://gis.scdot.org/hosting/rest/services/Bridges/FeatureServer/4",
+      "query_url": "https://gis.scdot.org/hosting/rest/services/Bridges/FeatureServer/4/query?where=1%3D1&outFields=*&geometry=-82.20%2C34.13%2C-81.85%2C34.36&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&returnGeometry=true&outSR=4326&f=json",
+      "attribution": "South Carolina Department of Transportation",
+      "license": "No explicit redistribution license stated by public service; factual coordinates and route identifiers extracted."
+    },
+    {
+      "id": "scdnr_ramps",
+      "title": "SCDNR Boat Ramps data, ArcGIS public copy",
+      "url": "https://services.arcgis.com/F7DSX1DSNSiWmOqh/arcgis/rest/services/Boat_Ramps/FeatureServer/0",
+      "query_url": "https://services.arcgis.com/F7DSX1DSNSiWmOqh/arcgis/rest/services/Boat_Ramps/FeatureServer/0/query?where=WATER_BODY%20LIKE%20%27%25GREENWOOD%25%27&outFields=*&returnGeometry=true&outSR=4326&f=json",
+      "attribution": "South Carolina Department of Natural Resources; ArcGIS copy by The Nature Conservancy",
+      "license": "No explicit license on public ArcGIS item; SCDNR metadata lists no access constraint. Facility status may have changed."
+    },
+    {
+      "id": "usace_nid",
+      "title": "National Inventory of Dams",
+      "url": "https://geospatial.sec.usace.army.mil/dls/rest/services/NID/National_Inventory_of_Dams_Public_Service/FeatureServer/0",
+      "query_url": "https://geospatial.sec.usace.army.mil/dls/rest/services/NID/National_Inventory_of_Dams_Public_Service/FeatureServer/0/query?where=1%3D1&outFields=NIDID%2CNAME%2COTHER_NAMES%2CLATITUDE%2CLONGITUDE%2CCOUNTYSTATE%2CRIVER_OR_STREAM%2CYEAR_COMPLETED&geometry=-81.93%2C34.15%2C-81.88%2C34.19&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&returnGeometry=true&outSR=4326&f=json",
+      "attribution": "U.S. Army Corps of Engineers, National Inventory of Dams",
+      "license": "U.S. federal government public data."
+    },
+    {
+      "id": "usgs_rail",
+      "title": "USGS National Transportation Dataset, FRA rail lines",
+      "url": "https://carto-wfs.nationalmap.gov/arcgis/rest/services/transportation/MapServer/6",
+      "query_url": "https://carto-wfs.nationalmap.gov/arcgis/rest/services/transportation/MapServer/6/query?where=1%3D1&outFields=*&geometry=-82.20%2C34.13%2C-81.85%2C34.36&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&returnGeometry=true&outSR=4326&f=geojson",
+      "attribution": "U.S. Geological Survey; Federal Railroad Administration",
+      "license": "USGS National Map public domain; source describes FRA Rail Lines 07/2025."
+    },
+    {
+      "id": "usgs_roads",
+      "title": "USGS National Transportation Dataset road centerlines",
+      "url": "https://carto-wfs.nationalmap.gov/arcgis/rest/services/transportation/MapServer",
+      "attribution": "U.S. Geological Survey; U.S. Census Bureau TIGER/Line",
+      "license": "USGS National Map public domain. Bridge road-line extracts are saved in raw/usgs_road_*.json."
+    },
+    {
+      "id": "usgs_shoreline",
+      "title": "USGS NHD Lake Greenwood waterbody polygon",
+      "url": "https://hydro.nationalmap.gov/arcgis/rest/services/nhd/MapServer/12",
+      "attribution": "U.S. Geological Survey",
+      "license": "Public domain."
+    }
+  ],
+  "features": [
+    {
+      "id": "scdot-bridge-80524",
+      "name": "US 221 / SC 72 Saluda River bridge",
+      "type": "major-road-bridge",
+      "latitude": 34.27982402,
+      "longitude": -82.05846409,
+      "east_m": -1618.305,
+      "north_m": 1569.941,
+      "source_id": "scdot_bridges",
+      "source_record": "80524",
+      "source_url": "https://gis.scdot.org/hosting/rest/services/Bridges/FeatureServer/4",
+      "license": "Public SCDOT GIS service; no explicit redistribution license stated.",
+      "confidence": "high",
+      "accuracy_note": "SCDOT bridge point is sourced; depicted span follows a nearby USGS road centerline clipped against the USGS water polygon. Width, height, piers, and clearance are scenic approximations.",
+      "route": "US 221",
+      "crossing": "SALUDA RIVER",
+      "span_endpoints_m": [
+        [
+          -1640.887,
+          1498.431
+        ],
+        [
+          -1558.307,
+          1707.174
+        ]
+      ],
+      "span_length_m": 224.5,
+      "span_bearing_deg": 21.6,
+      "alignment_source_url": "https://carto-wfs.nationalmap.gov/arcgis/rest/services/transportation/MapServer",
+      "alignment_query_url": "https://carto-wfs.nationalmap.gov/arcgis/rest/services/transportation/MapServer/4/query?where=1%3D1&outFields=*&geometry=-82.06246409%2C34.27582402%2C-82.05446409%2C34.28382402&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&returnGeometry=true&outSR=4326&f=json",
+      "alignment_record": "787752",
+      "alignment_name": "US Hwy 221",
+      "alignment_offset_m": 5.5
+    },
+    {
+      "id": "scdot-bridge-80527",
+      "name": "SC 72 Cane Creek south bridge",
+      "type": "road-bridge",
+      "latitude": 34.28972828,
+      "longitude": -82.03142673,
+      "east_m": 869.088,
+      "north_m": 2672.478,
+      "source_id": "scdot_bridges",
+      "source_record": "80527",
+      "source_url": "https://gis.scdot.org/hosting/rest/services/Bridges/FeatureServer/4",
+      "license": "Public SCDOT GIS service; no explicit redistribution license stated.",
+      "confidence": "high",
+      "accuracy_note": "SCDOT bridge point is sourced; depicted span follows a nearby USGS road centerline clipped against the USGS water polygon. Width, height, piers, and clearance are scenic approximations.",
+      "route": "SC 72",
+      "crossing": "CANE CREEK",
+      "span_endpoints_m": [
+        [
+          854.661,
+          2672.518
+        ],
+        [
+          885.37,
+          2673.386
+        ]
+      ],
+      "span_length_m": 30.7,
+      "span_bearing_deg": 88.4,
+      "alignment_source_url": "https://carto-wfs.nationalmap.gov/arcgis/rest/services/transportation/MapServer",
+      "alignment_query_url": "https://carto-wfs.nationalmap.gov/arcgis/rest/services/transportation/MapServer/5/query?where=1%3D1&outFields=*&geometry=-82.03542673%2C34.28572828%2C-82.02742673%2C34.29372828&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&returnGeometry=true&outSR=4326&f=json",
+      "alignment_record": "1164083",
+      "alignment_name": "State Hwy 72",
+      "alignment_offset_m": 0.5
+    },
+    {
+      "id": "scdot-bridge-80528",
+      "name": "SC 72 Cane Creek north bridge",
+      "type": "road-bridge",
+      "latitude": 34.28992464,
+      "longitude": -82.03143168,
+      "east_m": 868.632,
+      "north_m": 2694.336,
+      "source_id": "scdot_bridges",
+      "source_record": "80528",
+      "source_url": "https://gis.scdot.org/hosting/rest/services/Bridges/FeatureServer/4",
+      "license": "Public SCDOT GIS service; no explicit redistribution license stated.",
+      "confidence": "high",
+      "accuracy_note": "SCDOT bridge point is sourced; depicted span follows a nearby USGS road centerline clipped against the USGS water polygon. Width, height, piers, and clearance are scenic approximations.",
+      "route": "SC 72",
+      "crossing": "CANE CREEK",
+      "span_endpoints_m": [
+        [
+          899.171,
+          2697.854
+        ],
+        [
+          818.209,
+          2694.856
+        ]
+      ],
+      "span_length_m": 81.0,
+      "span_bearing_deg": 87.9,
+      "alignment_source_url": "https://carto-wfs.nationalmap.gov/arcgis/rest/services/transportation/MapServer",
+      "alignment_query_url": "https://carto-wfs.nationalmap.gov/arcgis/rest/services/transportation/MapServer/5/query?where=1%3D1&outFields=*&geometry=-82.03543168%2C34.28592464%2C-82.02743168%2C34.29392464&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&returnGeometry=true&outSR=4326&f=json",
+      "alignment_record": "569842",
+      "alignment_name": "State Hwy 72",
+      "alignment_offset_m": 2.4
+    },
+    {
+      "id": "scdot-bridge-80525",
+      "name": "S-33 upper Saluda River bridge",
+      "type": "road-bridge",
+      "latitude": 34.30789547,
+      "longitude": -82.10975777,
+      "east_m": -6337.24,
+      "north_m": 4694.841,
+      "source_id": "scdot_bridges",
+      "source_record": "80525",
+      "source_url": "https://gis.scdot.org/hosting/rest/services/Bridges/FeatureServer/4",
+      "license": "Public SCDOT GIS service; no explicit redistribution license stated.",
+      "confidence": "high",
+      "accuracy_note": "SCDOT bridge point is sourced; depicted span follows a nearby USGS road centerline clipped against the USGS water polygon. Width, height, piers, and clearance are scenic approximations.",
+      "route": "S- 33",
+      "crossing": "SALUDA RIVER",
+      "span_endpoints_m": [
+        [
+          -6340.809,
+          4685.508
+        ],
+        [
+          -6341.453,
+          4748.849
+        ]
+      ],
+      "span_length_m": 63.3,
+      "span_bearing_deg": 179.4,
+      "alignment_source_url": "https://carto-wfs.nationalmap.gov/arcgis/rest/services/transportation/MapServer",
+      "alignment_query_url": "https://carto-wfs.nationalmap.gov/arcgis/rest/services/transportation/MapServer/7/query?where=1%3D1&outFields=*&geometry=-82.11375777%2C34.30389547%2C-82.10575777%2C34.31189547&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&returnGeometry=true&outSR=4326&f=json",
+      "alignment_record": "21833260",
+      "alignment_name": "State Rd S-30-33",
+      "alignment_offset_m": 3.7
+    },
+    {
+      "id": "scdot-bridge-80526",
+      "name": "S-29 Reedy River bridge",
+      "type": "road-bridge",
+      "latitude": 34.32800505,
+      "longitude": -82.08493824,
+      "east_m": -4053.884,
+      "north_m": 6933.428,
+      "source_id": "scdot_bridges",
+      "source_record": "80526",
+      "source_url": "https://gis.scdot.org/hosting/rest/services/Bridges/FeatureServer/4",
+      "license": "Public SCDOT GIS service; no explicit redistribution license stated.",
+      "confidence": "high",
+      "accuracy_note": "SCDOT bridge point is sourced; depicted span follows a nearby USGS road centerline clipped against the USGS water polygon. Width, height, piers, and clearance are scenic approximations.",
+      "route": "S- 29",
+      "crossing": "REEDY RIVER",
+      "span_endpoints_m": [
+        [
+          -4070.025,
+          6865.328
+        ],
+        [
+          -4024.676,
+          7030.977
+        ]
+      ],
+      "span_length_m": 171.7,
+      "span_bearing_deg": 15.3,
+      "alignment_source_url": "https://carto-wfs.nationalmap.gov/arcgis/rest/services/transportation/MapServer",
+      "alignment_query_url": "https://carto-wfs.nationalmap.gov/arcgis/rest/services/transportation/MapServer/7/query?where=1%3D1&outFields=*&geometry=-82.08693824%2C34.32600505%2C-82.08293824%2C34.33000505&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&returnGeometry=true&outSR=4326&f=json",
+      "alignment_record": "29656634",
+      "alignment_name": "River Fork Rd",
+      "alignment_offset_m": 2.7
+    },
+    {
+      "id": "scdot-bridge-80477",
+      "name": "S-91 Lake Greenwood bay bridge",
+      "type": "road-bridge",
+      "latitude": 34.22618217,
+      "longitude": -81.9437195,
+      "east_m": 8938.008,
+      "north_m": -4401.442,
+      "source_id": "scdot_bridges",
+      "source_record": "80477",
+      "source_url": "https://gis.scdot.org/hosting/rest/services/Bridges/FeatureServer/4",
+      "license": "Public SCDOT GIS service; no explicit redistribution license stated.",
+      "confidence": "high",
+      "accuracy_note": "SCDOT bridge point is sourced; depicted span follows a nearby USGS road centerline clipped against the USGS water polygon. Width, height, piers, and clearance are scenic approximations.",
+      "route": "S- 91",
+      "crossing": "LAKE GREENWOOD BAY",
+      "span_endpoints_m": [
+        [
+          8933.438,
+          -4396.623
+        ],
+        [
+          8946.986,
+          -4398.364
+        ]
+      ],
+      "span_length_m": 13.7,
+      "span_bearing_deg": 97.3,
+      "alignment_source_url": "https://carto-wfs.nationalmap.gov/arcgis/rest/services/transportation/MapServer",
+      "alignment_query_url": "https://carto-wfs.nationalmap.gov/arcgis/rest/services/transportation/MapServer/7/query?where=1%3D1&outFields=*&geometry=-81.94771950%2C34.22218217%2C-81.93971950%2C34.23018217&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&returnGeometry=true&outSR=4326&f=json",
+      "alignment_record": "29784960",
+      "alignment_name": "Walnut Tree Rd",
+      "alignment_offset_m": 4.0
+    },
+    {
+      "id": "scdot-bridge-80534",
+      "name": "S-307 Rabon Creek bridge",
+      "type": "road-bridge",
+      "latitude": 34.34798851,
+      "longitude": -82.1001506,
+      "east_m": -5453.396,
+      "north_m": 9157.978,
+      "source_id": "scdot_bridges",
+      "source_record": "80534",
+      "source_url": "https://gis.scdot.org/hosting/rest/services/Bridges/FeatureServer/4",
+      "license": "Public SCDOT GIS service; no explicit redistribution license stated.",
+      "confidence": "high",
+      "accuracy_note": "SCDOT bridge point is sourced; depicted span follows a nearby USGS road centerline clipped against the USGS water polygon. Width, height, piers, and clearance are scenic approximations.",
+      "route": "S- 307",
+      "crossing": "RABON CREEK",
+      "span_endpoints_m": [
+        [
+          -5450.541,
+          9157.659
+        ],
+        [
+          -5473.897,
+          9178.42
+        ]
+      ],
+      "span_length_m": 31.2,
+      "span_bearing_deg": 131.6,
+      "alignment_source_url": "https://carto-wfs.nationalmap.gov/arcgis/rest/services/transportation/MapServer",
+      "alignment_query_url": "https://carto-wfs.nationalmap.gov/arcgis/rest/services/transportation/MapServer/7/query?where=1%3D1&outFields=*&geometry=-82.10415060%2C34.34398851%2C-82.09615060%2C34.35198851&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&returnGeometry=true&outSR=4326&f=json",
+      "alignment_record": "8788680",
+      "alignment_name": "State Rd S-30-307",
+      "alignment_offset_m": 1.7
+    },
+    {
+      "id": "scdot-bridge-80529",
+      "name": "S-344 Banks Creek bridge",
+      "type": "road-bridge",
+      "latitude": 34.26228549,
+      "longitude": -81.97683863,
+      "east_m": 5891.103,
+      "north_m": -382.439,
+      "source_id": "scdot_bridges",
+      "source_record": "80529",
+      "source_url": "https://gis.scdot.org/hosting/rest/services/Bridges/FeatureServer/4",
+      "license": "Public SCDOT GIS service; no explicit redistribution license stated.",
+      "confidence": "high",
+      "accuracy_note": "SCDOT bridge point is sourced; depicted span follows a nearby USGS road centerline clipped against the USGS water polygon. Width, height, piers, and clearance are scenic approximations.",
+      "route": "S- 344",
+      "crossing": "BANKS CREEK",
+      "span_endpoints_m": [
+        [
+          5911.214,
+          -410.309
+        ],
+        [
+          5884.672,
+          -371.434
+        ]
+      ],
+      "span_length_m": 47.1,
+      "span_bearing_deg": 145.7,
+      "alignment_source_url": "https://carto-wfs.nationalmap.gov/arcgis/rest/services/transportation/MapServer",
+      "alignment_query_url": "https://carto-wfs.nationalmap.gov/arcgis/rest/services/transportation/MapServer/7/query?where=1%3D1&outFields=*&geometry=-81.98083863%2C34.25828549%2C-81.97283863%2C34.26628549&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&returnGeometry=true&outSR=4326&f=json",
+      "alignment_record": "22217920",
+      "alignment_name": "State Rd S-30-344",
+      "alignment_offset_m": 1.2
+    },
+    {
+      "id": "scdot-bridge-80450",
+      "name": "L-95 Mulberry Creek bridge",
+      "type": "road-bridge",
+      "latitude": 34.32516842,
+      "longitude": -82.16750399,
+      "east_m": -11649.797,
+      "north_m": 6617.656,
+      "source_id": "scdot_bridges",
+      "source_record": "80450",
+      "source_url": "https://gis.scdot.org/hosting/rest/services/Bridges/FeatureServer/4",
+      "license": "Public SCDOT GIS service; no explicit redistribution license stated.",
+      "confidence": "high",
+      "accuracy_note": "SCDOT bridge point is sourced; depicted span follows a nearby USGS road centerline clipped against the USGS water polygon. Width, height, piers, and clearance are scenic approximations.",
+      "route": "L- 95",
+      "crossing": "MULBERRY CREEK",
+      "span_endpoints_m": [
+        [
+          -11661.443,
+          6617.191
+        ],
+        [
+          -11637.677,
+          6619.573
+        ]
+      ],
+      "span_length_m": 23.9,
+      "span_bearing_deg": 84.3,
+      "alignment_source_url": "https://carto-wfs.nationalmap.gov/arcgis/rest/services/transportation/MapServer",
+      "alignment_query_url": "https://carto-wfs.nationalmap.gov/arcgis/rest/services/transportation/MapServer/7/query?where=1%3D1&outFields=*&geometry=-82.17150399%2C34.32116842%2C-82.16350399%2C34.32916842&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&returnGeometry=true&outSR=4326&f=json",
+      "alignment_record": "29714526",
+      "alignment_name": "Ridge Rd",
+      "alignment_offset_m": 0.8
+    },
+    {
+      "id": "scdnr-ramp-24001",
+      "name": "Greenwood Shores public ramp",
+      "type": "public-ramp",
+      "latitude": 34.18640662,
+      "longitude": -81.93420351,
+      "east_m": 9813.464,
+      "north_m": -8829.237,
+      "source_id": "scdnr_ramps",
+      "source_record": "24001",
+      "source_url": "https://services.arcgis.com/F7DSX1DSNSiWmOqh/arcgis/rest/services/Boat_Ramps/FeatureServer/0",
+      "license": "Public SCDNR-derived GIS copy; no explicit license stated; credit SCDNR and The Nature Conservancy.",
+      "confidence": "medium",
+      "accuracy_note": "SCDNR-derived access point; older source and location are approximate. Verify present access before real-world use.",
+      "owner": "Greenwood County",
+      "amenities": []
+    },
+    {
+      "id": "scdnr-ramp-24002",
+      "name": "Lake Greenwood State Park ramp",
+      "type": "public-ramp",
+      "latitude": 34.19650662,
+      "longitude": -81.94640351,
+      "east_m": 8691.083,
+      "north_m": -7704.909,
+      "source_id": "scdnr_ramps",
+      "source_record": "24002",
+      "source_url": "https://services.arcgis.com/F7DSX1DSNSiWmOqh/arcgis/rest/services/Boat_Ramps/FeatureServer/0",
+      "license": "Public SCDNR-derived GIS copy; no explicit license stated; credit SCDNR and The Nature Conservancy.",
+      "confidence": "medium",
+      "accuracy_note": "SCDNR-derived access point; older source and location are approximate. Verify present access before real-world use.",
+      "owner": "SCPRT",
+      "amenities": [
+        "courtesy_dock"
+      ]
+    },
+    {
+      "id": "scdnr-ramp-24003",
+      "name": "Souls Harbor public ramp",
+      "type": "public-ramp",
+      "latitude": 34.32530664,
+      "longitude": -82.16830359,
+      "east_m": -11723.358,
+      "north_m": 6633.043,
+      "source_id": "scdnr_ramps",
+      "source_record": "24003",
+      "source_url": "https://services.arcgis.com/F7DSX1DSNSiWmOqh/arcgis/rest/services/Boat_Ramps/FeatureServer/0",
+      "license": "Public SCDNR-derived GIS copy; no explicit license stated; credit SCDNR and The Nature Conservancy.",
+      "confidence": "medium",
+      "accuracy_note": "SCDNR-derived access point; older source and location are approximate. Verify present access before real-world use.",
+      "owner": "Greenwood County",
+      "amenities": []
+    },
+    {
+      "id": "scdnr-ramp-24004",
+      "name": "Greenwood Access Area ramp",
+      "type": "public-ramp",
+      "latitude": 34.17300662,
+      "longitude": -81.92000351,
+      "east_m": 11119.841,
+      "north_m": -10320.918,
+      "source_id": "scdnr_ramps",
+      "source_record": "24004",
+      "source_url": "https://services.arcgis.com/F7DSX1DSNSiWmOqh/arcgis/rest/services/Boat_Ramps/FeatureServer/0",
+      "license": "Public SCDNR-derived GIS copy; no explicit license stated; credit SCDNR and The Nature Conservancy.",
+      "confidence": "medium",
+      "accuracy_note": "SCDNR-derived access point; older source and location are approximate. Verify present access before real-world use.",
+      "owner": "Greenwood County",
+      "amenities": []
+    },
+    {
+      "id": "nid-sc00109-spillway",
+      "name": "Buzzards Roost Spillway",
+      "type": "dam-component",
+      "latitude": 34.16976462,
+      "longitude": -81.9025445,
+      "east_m": 12726.041,
+      "north_m": -10681.816,
+      "source_id": "usace_nid",
+      "source_record": "SC00109:Buzzards Roost Spillway",
+      "source_url": "https://geospatial.sec.usace.army.mil/dls/rest/services/NID/National_Inventory_of_Dams_Public_Service/FeatureServer/0",
+      "license": "U.S. federal government public data.",
+      "confidence": "high",
+      "accuracy_note": "NID point denotes a dam component, not its full footprint or shoreline barrier geometry.",
+      "component": "spillway",
+      "year_completed": 1940
+    },
+    {
+      "id": "nid-sc00109-embankment",
+      "name": "Buzzards Roost Embankment",
+      "type": "dam-component",
+      "latitude": 34.17258862,
+      "longitude": -81.9051315,
+      "east_m": 12488.041,
+      "north_m": -10367.449,
+      "source_id": "usace_nid",
+      "source_record": "SC00109:Buzzards Roost Embankment",
+      "source_url": "https://geospatial.sec.usace.army.mil/dls/rest/services/NID/National_Inventory_of_Dams_Public_Service/FeatureServer/0",
+      "license": "U.S. federal government public data.",
+      "confidence": "high",
+      "accuracy_note": "NID point denotes a dam component, not its full footprint or shoreline barrier geometry.",
+      "component": "embankment",
+      "year_completed": 1940
+    },
+    {
+      "id": "nid-sc00109-fuse-plug",
+      "name": "Buzzards Roost Fuse Plug",
+      "type": "dam-component",
+      "latitude": 34.17274062,
+      "longitude": -81.9180245,
+      "east_m": 11301.906,
+      "north_m": -10350.529,
+      "source_id": "usace_nid",
+      "source_record": "SC00109:Buzzards Roost Fuse Plug",
+      "source_url": "https://geospatial.sec.usace.army.mil/dls/rest/services/NID/National_Inventory_of_Dams_Public_Service/FeatureServer/0",
+      "license": "U.S. federal government public data.",
+      "confidence": "high",
+      "accuracy_note": "NID point denotes a dam component, not its full footprint or shoreline barrier geometry.",
+      "component": "fuse-plug",
+      "year_completed": 1940
+    },
+    {
+      "id": "rail-upper-lake",
+      "name": "CSX upper Lake Greenwood rail crossing",
+      "type": "rail-crossing",
+      "latitude": 34.28965208,
+      "longitude": -82.07245841,
+      "east_m": -2905.76,
+      "north_m": 2663.996,
+      "source_id": "usgs_rail",
+      "source_record": "949354,963860",
+      "source_url": "https://carto-wfs.nationalmap.gov/arcgis/rest/services/transportation/MapServer/6",
+      "license": "USGS National Map public domain; credit USGS and FRA.",
+      "confidence": "medium",
+      "accuracy_note": "USGS/FRA rail centerline intersects the USGS lake polygon. Segment endpoints and length are inferred at ~5 m sampling; structural form and clearance are not verified.",
+      "span_endpoints_m": [
+        [
+          -2992.869,
+          2532.8
+        ],
+        [
+          -2818.651,
+          2795.192
+        ]
+      ],
+      "span_length_m": 315.0,
+      "span_bearing_deg": 33.6
+    },
+    {
+      "id": "rail-lower-lake",
+      "name": "CSX lower Lake Greenwood rail crossing",
+      "type": "rail-crossing",
+      "latitude": 34.25873516,
+      "longitude": -82.02553801,
+      "east_m": 1410.84,
+      "north_m": -777.661,
+      "source_id": "usgs_rail",
+      "source_record": "1107407,1006682",
+      "source_url": "https://carto-wfs.nationalmap.gov/arcgis/rest/services/transportation/MapServer/6",
+      "license": "USGS National Map public domain; credit USGS and FRA.",
+      "confidence": "medium",
+      "accuracy_note": "USGS/FRA rail centerline intersects the USGS lake polygon. Segment endpoints and length are inferred at ~5 m sampling; structural form and clearance are not verified.",
+      "span_endpoints_m": [
+        [
+          1330.859,
+          -849.123
+        ],
+        [
+          1490.821,
+          -706.198
+        ]
+      ],
+      "span_length_m": 214.5,
+      "span_bearing_deg": 48.2
+    },
+    {
+      "id": "rail-eastern-inlet",
+      "name": "CSX eastern inlet rail crossing",
+      "type": "rail-crossing",
+      "latitude": 34.26839538,
+      "longitude": -82.01502904,
+      "east_m": 2377.648,
+      "north_m": 297.711,
+      "source_id": "usgs_rail",
+      "source_record": "1006682",
+      "source_url": "https://carto-wfs.nationalmap.gov/arcgis/rest/services/transportation/MapServer/6",
+      "license": "USGS National Map public domain; credit USGS and FRA.",
+      "confidence": "medium",
+      "accuracy_note": "USGS/FRA rail centerline intersects the USGS lake polygon. Segment endpoints and length are inferred at ~5 m sampling; structural form and clearance are not verified.",
+      "span_endpoints_m": [
+        [
+          2371.254,
+          288.165
+        ],
+        [
+          2384.042,
+          307.256
+        ]
+      ],
+      "span_length_m": 23.0,
+      "span_bearing_deg": 33.8
+    }
+  ]
+}
