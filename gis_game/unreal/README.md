@@ -8,7 +8,17 @@ This is the Unreal Engine 5.8.3 project for the Goat Island Skiff sailing game. 
 2. Install Unreal Engine **5.8.3**, a supported Visual Studio 2022 C++ toolchain, and a Windows SDK. Open `GISGame.uproject` and allow Unreal to compile the `GISGame` module if prompted.
 3. Open the included `/Game/Maps/GISLake` level if it does not open automatically, then press **Play**. It is already the editor and game default map. The game assembles its terrain, water, landmarks, lighting, boat, and HUD when play starts.
 
-The imported boat and environment assets are already in `Content/Boat` and `Content/Environment`. No FBX import, Animation Blueprint, or new level creation is needed. The Unreal Editor project and Windows Development package have been built and verified. To play outside the editor, package the project for Windows and run `GISGame.exe` in the generated `Windows` folder; keep that packaged folder intact so the Lake Greenwood data remains available. Packaged screenshots confirm the lake, boat, wind instrument, and both map views render.
+The imported boat and environment assets are already in `Content/Boat` and `Content/Environment`. No FBX import, Animation Blueprint, or new level creation is needed. The Unreal Editor project and Windows Development package have been built and verified. To play outside the editor, run `GISGame.exe` in the packaged `Windows` folder; keep that folder intact so the Lake Greenwood data remains available. Packaged screenshots confirm the lake, boat, wind instrument, and both map views render.
+
+## Windows player download
+
+The [`windows` folder](windows) contains the portable Windows release packer, its checks, and [player instructions](windows/PLAY_ON_WINDOWS.md). After Unreal Automation Tool stages a **Windows Development** build with cooked content, create a ready-to-extract ZIP with:
+
+```powershell
+python windows/make_release.py --staged PATH_TO_WINDOWS_STAGE --output Goat-Island-Skiff-Windows.zip --release-id 0.1.0-alpha1
+```
+
+The staged directory contains the generated `GISGame.exe` launcher and `GISGame/Content/Paks`. The ZIP carries the game, Unreal runtime, Lake Greenwood data, and player instructions while excluding debug symbols, logs, saved settings, and staging manifests. Windows players can extract the ZIP and double-click `GISGame.exe`; no Unreal Editor or installer is needed.
 
 ## Linux player download
 
