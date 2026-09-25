@@ -463,7 +463,8 @@ void AGISHUD::DrawMapPanel(const AGISBoatPawn& Boat,
         TArray<gis_unreal::FHUDRect> UsedLabels;
         const auto BoatPoint = ToScreen(State.x, State.y);
         UsedLabels.Add({BoatPoint.X-5*S, BoatPoint.Y-18*S, 114*S, 34*S});
-        for (TActorIterator<AGISLandmarkScene> It(GetWorld()); It; ++It)
+        TActorIterator<AGISLandmarkScene> It(GetWorld());
+        if (It)
         {
             for (const FGISLandmarkMapMarker& Marker : It->MapMarkers)
             {
@@ -515,7 +516,6 @@ void AGISHUD::DrawMapPanel(const AGISBoatPawn& Boat,
                     }
                 }
             }
-            break;
         }
     }
 

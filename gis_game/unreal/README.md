@@ -10,6 +10,18 @@ This is the Unreal Engine 5.8.3 project for the Goat Island Skiff sailing game. 
 
 The imported boat and environment assets are already in `Content/Boat` and `Content/Environment`. No FBX import, Animation Blueprint, or new level creation is needed. The Unreal Editor project and Windows Development package have been built and verified. To play outside the editor, package the project for Windows and run `GISGame.exe` in the generated `Windows` folder; keep that packaged folder intact so the Lake Greenwood data remains available. Packaged screenshots confirm the lake, boat, wind instrument, and both map views render.
 
+## Linux player download
+
+The [Ubuntu test build](https://mechatronicsaint.com/downloads/goat-island-skiff/Goat-Island-Skiff-Linux.tar.gz) is available from the Lab page. It passed archive, installer, and headless startup checks on Ubuntu; graphics and sailing still need a test on a Vulkan-capable Linux computer.
+
+The [`linux` folder](linux) contains a release packer, a user-local Ubuntu installer, and [player instructions](linux/PLAY_ON_UBUNTU.md). After Unreal Automation Tool stages a **Linux Shipping** build with cooked content, make a portable archive with:
+
+```text
+python linux/make_release.py --staged PATH_TO_LINUX_STAGE --output Goat-Island-Skiff-Linux.tar.gz --release-id 0.1.0-alpha1
+```
+
+`PATH_TO_LINUX_STAGE` is the directory containing Unreal's generated `GISGame.sh` and `GISGame/Content/Paks`. The archive includes the packaged game, executable permissions, and `install.sh`; it does not contain the Unreal Editor or compiler. The installer copies the game into the player's home directory and adds an app-menu shortcut without requiring administrator access. AMD and other GPUs still require a working Vulkan driver supplied by Ubuntu. The Linux build must be tested on a real Vulkan-capable Linux computer before claiming that the game runs there.
+
 ## Sail and look around
 
 | Input | Action |

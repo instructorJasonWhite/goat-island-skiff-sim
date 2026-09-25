@@ -21,6 +21,8 @@
 **/*.blend1
 **/*.blend2
 *.zip
+/Goat-Island-Skiff-Linux*.tar.gz
+/Goat-Island-Skiff-Linux*.tar.gz.part
 /gis_game/package_release.py
 
 # GIS downloads with uncertain state-service redistribution terms, and
