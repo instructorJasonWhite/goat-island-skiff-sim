@@ -22,15 +22,16 @@ The staged directory contains the generated `GISGame.exe` launcher and `GISGame/
 
 ## Linux player download
 
-The [Ubuntu test build](https://mechatronicsaint.com/downloads/goat-island-skiff/Goat-Island-Skiff-Linux.tar.gz) is available from the Lab page. It passed archive, installer, and headless startup checks on Ubuntu; graphics and sailing still need a test on a Vulkan-capable Linux computer.
+The [Ubuntu installer](https://mechatronicsaint.com/downloads/goat-island-skiff/Goat-Island-Skiff-Ubuntu.deb) is available from the Lab page. Download the `.deb`, open it with Ubuntu App Center, choose **Install**, then launch **Goat Island Skiff** from the app menu. Unreal Engine and Blender are not needed on the player's computer. The [portable Linux archive](https://mechatronicsaint.com/downloads/goat-island-skiff/Goat-Island-Skiff-Linux.tar.gz) remains available for manual installation.
 
-The [`linux` folder](linux) contains a release packer, a user-local Ubuntu installer, and [player instructions](linux/PLAY_ON_UBUNTU.md). After Unreal Automation Tool stages a **Linux Shipping** build with cooked content, make a portable archive with:
+The [`linux` folder](linux) contains release packers, a user-local archive installer, Ubuntu package checks, and [player instructions](linux/PLAY_ON_UBUNTU.md). After Unreal Automation Tool stages a **Linux Shipping** build with cooked content, make the portable archive and Ubuntu installer with:
 
 ```text
 python linux/make_release.py --staged PATH_TO_LINUX_STAGE --output Goat-Island-Skiff-Linux.tar.gz --release-id 0.1.0-alpha1
+python linux/make_deb.py --archive Goat-Island-Skiff-Linux.tar.gz --output Goat-Island-Skiff-Ubuntu.deb
 ```
 
-`PATH_TO_LINUX_STAGE` is the directory containing Unreal's generated `GISGame.sh` and `GISGame/Content/Paks`. The archive includes the packaged game, executable permissions, and `install.sh`; it does not contain the Unreal Editor or compiler. The installer copies the game into the player's home directory and adds an app-menu shortcut without requiring administrator access. AMD and other GPUs still require a working Vulkan driver supplied by Ubuntu. The Linux build must be tested on a real Vulkan-capable Linux computer before claiming that the game runs there.
+`PATH_TO_LINUX_STAGE` is the directory containing Unreal's generated `GISGame.sh` and `GISGame/Content/Paks`. The archive includes the packaged game and `install.sh`, which installs to the player's home directory without administrator access. The `.deb` installs the same game into `/opt/goat-island-skiff` and adds an app-menu shortcut. The Ubuntu package passed a clean Ubuntu 24.04 install and non-root headless startup check; graphics and sailing still need testing on a Vulkan-capable Linux computer. AMD and NVIDIA cards require a working Vulkan driver supplied by Ubuntu.
 
 ## Sail and look around
 
