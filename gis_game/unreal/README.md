@@ -22,16 +22,16 @@ The staged directory contains the generated `GISGame.exe` launcher and `GISGame/
 
 ## Linux player download
 
-The [Ubuntu installer](https://mechatronicsaint.com/downloads/goat-island-skiff/Goat-Island-Skiff-Ubuntu.deb) is available from the Lab page. Download the `.deb`, open it with Ubuntu App Center, choose **Install**, then launch **Goat Island Skiff** from the app menu. Unreal Engine and Blender are not needed on the player's computer. The [portable Linux archive](https://mechatronicsaint.com/downloads/goat-island-skiff/Goat-Island-Skiff-Linux.tar.gz) remains available for manual installation.
+The [Ubuntu installer](https://mechatronicsaint.com/downloads/goat-island-skiff/Goat-Island-Skiff-Ubuntu-0.1.0-alpha1-1.deb) is available from the Lab page. Download the `.deb`, open it with Ubuntu App Center, choose **Install**, then launch **Goat Island Skiff** from the app menu. Unreal Engine and Blender are not needed on the player's computer. This revision includes the Linux graphics setting that prevented a startup crash on a tested AMD Radeon computer. The earlier portable archive is withheld from the Lab card until it is rebuilt with that setting.
 
-The [`linux` folder](linux) contains release packers, a user-local archive installer, Ubuntu package checks, and [player instructions](linux/PLAY_ON_UBUNTU.md). After Unreal Automation Tool stages a **Linux Shipping** build with cooked content, make the portable archive and Ubuntu installer with:
+The [`linux` folder](linux) contains release packers, a user-local archive installer, Ubuntu package checks, and [player instructions](linux/PLAY_ON_UBUNTU.md). After Unreal Automation Tool stages a **Linux Shipping** build with cooked content, make the next portable archive and Ubuntu installer with a new release ID:
 
 ```text
-python linux/make_release.py --staged PATH_TO_LINUX_STAGE --output Goat-Island-Skiff-Linux.tar.gz --release-id 0.1.0-alpha1
-python linux/make_deb.py --archive Goat-Island-Skiff-Linux.tar.gz --output Goat-Island-Skiff-Ubuntu.deb
+python linux/make_release.py --staged PATH_TO_LINUX_STAGE --output Goat-Island-Skiff-Linux-alpha2.tar.gz --release-id 0.1.0-alpha2
+python linux/make_deb.py --archive Goat-Island-Skiff-Linux-alpha2.tar.gz --output Goat-Island-Skiff-Ubuntu-0.1.0-alpha2-1.deb
 ```
 
-`PATH_TO_LINUX_STAGE` is the directory containing Unreal's generated `GISGame.sh` and `GISGame/Content/Paks`. The archive includes the packaged game and `install.sh`, which installs to the player's home directory without administrator access. The `.deb` installs the same game into `/opt/goat-island-skiff` and adds an app-menu shortcut. The Ubuntu package passed a clean Ubuntu 24.04 install and non-root headless startup check; graphics and sailing still need testing on a Vulkan-capable Linux computer. AMD and NVIDIA cards require a working Vulkan driver supplied by Ubuntu.
+`PATH_TO_LINUX_STAGE` is the directory containing Unreal's generated `GISGame.sh` and `GISGame/Content/Paks`. Use a new release ID when the archive payload changes; the manual installer rejects a different payload under an existing ID. The archive includes the packaged game and `install.sh`, which installs to the player's home directory without administrator access. Both packers include `Config/Linux/LinuxEngine.ini` so the startup setting remains in future releases, and reject a conflicting copy from staging or the archive. The `.deb` installs the same game into `/opt/goat-island-skiff` and adds an app-menu shortcut. The Ubuntu package passed a clean Ubuntu 24.04 install and non-root headless startup check; the supplied corrected package also ran on one AMD Radeon computer. Dad's computer and NVIDIA graphics have not yet been tested with this fix. AMD and NVIDIA cards require a working Vulkan driver supplied by Ubuntu.
 
 ## Sail and look around
 

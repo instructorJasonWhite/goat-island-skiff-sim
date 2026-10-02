@@ -4,24 +4,14 @@ The Ubuntu download contains the complete Unreal game for **64-bit Intel or AMD 
 
 ## Easy install on Ubuntu
 
-1. Click **Download Ubuntu installer (test build)** on the Lab page. This saves `Goat-Island-Skiff-Ubuntu.deb` in Downloads.
+1. Click **Download Ubuntu installer (test build)** on the Lab page. This saves `Goat-Island-Skiff-Ubuntu-0.1.0-alpha1-1.deb` in Downloads.
 2. Open the downloaded file. If it does not open in **App Center**, right-click it and choose **Open With App Center**.
 3. Click **Install** and enter your Ubuntu password when asked.
 4. Open **Goat Island Skiff** from the Ubuntu app menu.
 
-The package is for an **amd64/x86_64 Ubuntu desktop**. It places the game under `/opt/goat-island-skiff` and adds an app-menu shortcut. The package does not install or change graphics drivers. Future versions can be installed by opening the newer `.deb` the same way.
+The package is for an **amd64/x86_64 Ubuntu desktop**. It places the game under `/opt/goat-island-skiff` and adds an app-menu shortcut. The package does not install or change graphics drivers. Opening the newer `.deb` installs it over the previous version. This revision includes a Linux setting that prevented a startup shader crash on a tested AMD Radeon computer; other graphics hardware has not been verified with this fix.
 
-## Portable archive (manual option)
-
-The older `Goat-Island-Skiff-Linux.tar.gz` remains available for people who prefer an install without an administrator password:
-
-1. Download the archive and open a Terminal in its Downloads folder.
-2. Extract it: `tar -xzf Goat-Island-Skiff-Linux.tar.gz`
-3. Enter the folder: `cd Goat-Island-Skiff-Linux`
-4. Install for your account: `./install.sh`
-5. Open **Goat Island Skiff** from the Ubuntu app menu.
-
-You can also play without installing: extract the archive, enter its folder, and run `./GISGame.sh`. Keep the entire extracted folder together. The app-menu installer copies the game into your home directory, so you may delete the downloaded archive and extracted folder once the installed game works.
+The earlier portable Linux archive predates the graphics fix and is no longer linked from the Lab page. Use the Ubuntu installer above for now.
 
 ## Graphics and system requirements
 
@@ -37,7 +27,7 @@ sudo apt install libvulkan1 mesa-vulkan-drivers vulkan-tools
 vulkaninfo --summary
 ```
 
-The installer does not change graphics drivers. If `vulkaninfo` shows a software renderer such as **llvmpipe** instead of the AMD GPU, the game is unlikely to run well until Ubuntu uses the hardware driver. On Ubuntu 22.04, the installed Mesa version may need updating to meet Epic's RADV minimum. If the installed game does not start, run `goat-island-skiff` in a Terminal and save the error text. For the portable archive, run `./GISGame.sh` from a Terminal in its extracted folder instead.
+The installer does not change graphics drivers. If `vulkaninfo` shows a software renderer such as **llvmpipe** instead of the AMD GPU, the game is unlikely to run well until Ubuntu uses the hardware driver. On Ubuntu 22.04, the installed Mesa version may need updating to meet Epic's RADV minimum. If the installed game does not start, run `goat-island-skiff` in a Terminal and save the error text.
 
 ## Basic controls
 

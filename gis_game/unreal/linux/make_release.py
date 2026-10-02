@@ -16,6 +16,7 @@ from pathlib import Path
 
 
 ARCHIVE_ROOT = "Goat-Island-Skiff-Linux"
+LINUX_ENGINE_CONFIG_RELATIVE = "GISGame/Config/Linux/LinuxEngine.ini"
 RELEASE_ID_PATTERN = re.compile(r"[A-Za-z0-9][A-Za-z0-9._-]{0,63}\Z")
 COMPANIONS = (
     ("install.sh", 0o755),
@@ -115,6 +116,14 @@ def build_release(staged: Path, output: Path, release_id: str) -> Path:
     if staged in output.parents:
         raise ValueError("Write the release archive outside the staged build")
 
+    source_dir = Path(__file__).resolve().parent
+    linux_config_bytes = (source_dir.parent / "Config/Linux/LinuxEngine.ini").read_bytes()
+    staged_linux_config = staged / LINUX_ENGINE_CONFIG_RELATIVE
+    if staged_linux_config.exists() and (
+        not staged_linux_config.is_file() or staged_linux_config.read_bytes() != linux_config_bytes
+    ):
+        raise ValueError(f"The staged LinuxEngine.ini differs from the project override: {staged_linux_config}")
+
     output.parent.mkdir(parents=True, exist_ok=True)
     partial = output.with_name(output.name + ".part")
     if partial.exists():
@@ -131,7 +140,8 @@ def build_release(staged: Path, output: Path, release_id: str) -> Path:
                     raise ValueError(f"Unexpected symlink in Windows stage: {path}")
                 relative = path.relative_to(staged).as_posix()
                 if (
-                    any(part.lower().endswith(".dsym") for part in path.relative_to(staged).parts)
+                    relative == LINUX_ENGINE_CONFIG_RELATIVE
+                    or any(part.lower().endswith(".dsym") for part in path.relative_to(staged).parts)
                     or path.suffix.lower() in DEBUG_STAGE_SUFFIXES
                     or (path.parent == staged and path.name.startswith("Manifest_") and path.name.endswith("_Linux.txt"))
                 ):
@@ -158,7 +168,8 @@ def build_release(staged: Path, output: Path, release_id: str) -> Path:
                         source.seek(0)
                         bundle.addfile(info, source)
 
-            source_dir = Path(__file__).resolve().parent
+            _add_bytes(bundle, LINUX_ENGINE_CONFIG_RELATIVE, linux_config_bytes, 0o644)
+
             for name, mode in COMPANIONS:
                 content = (source_dir / name).read_bytes()
                 if name.endswith(".sh"):

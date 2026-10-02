@@ -20,6 +20,7 @@ from make_release import ARCHIVE_ROOT, _validate_staged_game
 
 
 GAME_DIRECTORY = Path("opt/goat-island-skiff")
+LINUX_ENGINE_CONFIG = Path(__file__).resolve().parent.parent / "Config/Linux/LinuxEngine.ini"
 RELEASE_PATTERN = re.compile(r"[0-9]+\.[0-9]+\.[0-9]+(?:-[A-Za-z0-9][A-Za-z0-9.-]*)?\Z")
 LAUNCH_SCRIPT = b"#!/bin/sh\ncd /opt/goat-island-skiff\nexec ./GISGame/Binaries/Linux/GISGame-Linux-Shipping GISGame \"$@\"\n"
 DESKTOP_ENTRY = """[Desktop Entry]
@@ -30,6 +31,7 @@ Exec=/usr/bin/goat-island-skiff
 Terminal=false
 Icon=applications-games
 Categories=Game;Simulation;
+StartupWMClass=GISGame-Linux-Shipping
 """
 
 
@@ -110,9 +112,17 @@ def build_deb(archive: Path, output: Path) -> Path:
             game = package_root / GAME_DIRECTORY
             game.mkdir(parents=True)
             with tarfile.open(archive, "r:gz") as bundle:
-                version = _release_version(bundle)
+                version = f"{_release_version(bundle)}-1"
                 _extract_game(bundle, game)
             _validate_staged_game(game)
+
+            linux_config = game / "GISGame/Config/Linux/LinuxEngine.ini"
+            linux_config_bytes = LINUX_ENGINE_CONFIG.read_bytes()
+            if linux_config.exists() and linux_config.read_bytes() != linux_config_bytes:
+                raise ValueError(f"The archived LinuxEngine.ini differs from the project override: {linux_config}")
+            linux_config.parent.mkdir(parents=True, exist_ok=True)
+            linux_config.write_bytes(linux_config_bytes)
+            linux_config.chmod(0o644)
 
             # Unreal's generated launcher runs chmod at every start. Package
             # files are root-owned, so both entry points use this safe variant.

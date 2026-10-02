@@ -32,7 +32,7 @@ class UbuntuDebTests(unittest.TestCase):
             self.assertEqual(build.returncode, 0, build.stderr)
 
             self.assertEqual(subprocess.check_output(["dpkg-deb", "-f", str(package), "Package"], text=True).strip(), "goat-island-skiff")
-            self.assertEqual(subprocess.check_output(["dpkg-deb", "-f", str(package), "Version"], text=True).strip(), "0.1.0~alpha1")
+            self.assertEqual(subprocess.check_output(["dpkg-deb", "-f", str(package), "Version"], text=True).strip(), "0.1.0~alpha1-1")
             self.assertEqual(subprocess.check_output(["dpkg-deb", "-f", str(package), "Architecture"], text=True).strip(), "amd64")
             dependencies = subprocess.check_output(["dpkg-deb", "-f", str(package), "Depends"], text=True)
             self.assertIn("libvulkan1", dependencies)
@@ -47,7 +47,11 @@ class UbuntuDebTests(unittest.TestCase):
             payload = extracted / "opt/goat-island-skiff"
             self.assertTrue((payload / "GISGame/Binaries/Linux/GISGame-Linux-Shipping").stat().st_mode & 0o111)
             self.assertTrue((extracted / "usr/bin/goat-island-skiff").stat().st_mode & 0o111)
-            self.assertTrue((extracted / "usr/share/applications/goat-island-skiff-ubuntu.desktop").is_file())
+            desktop = (extracted / "usr/share/applications/goat-island-skiff-ubuntu.desktop").read_text(encoding="utf-8")
+            self.assertIn("StartupWMClass=GISGame-Linux-Shipping", desktop)
+            linux_engine = (payload / "GISGame/Config/Linux/LinuxEngine.ini").read_text(encoding="utf-8")
+            self.assertIn("[ConsoleVariables]", linux_engine)
+            self.assertIn("r.PSOPrecache.GlobalShaders=0", linux_engine)
             for name in DATA_FILES:
                 self.assertEqual((payload / "GISGame/Content/Data" / name).read_bytes(), b"map data")
             self.assertFalse((payload / "install.sh").exists())
@@ -69,6 +73,28 @@ class UbuntuDebTests(unittest.TestCase):
             self.assertRegex(build.stderr, "unsafe|Unexpected|escape")
             self.assertFalse((root / "escape").exists())
             self.assertFalse((root / "game.deb").exists())
+
+    def test_rejects_conflicting_archived_linux_config(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            original = make_release.build_release(make_stage(root), root / "original.tar.gz", "0.1.0-alpha1")
+            conflicting = root / "conflicting.tar.gz"
+            with tarfile.open(original, "r:gz") as source, tarfile.open(conflicting, "w:gz") as target:
+                for member in source:
+                    if member.name == "Goat-Island-Skiff-Linux/GISGame/Config/Linux/LinuxEngine.ini":
+                        content = b"[ConsoleVariables]\nr.PSOPrecache.GlobalShaders=1\n"
+                        member.size = len(content)
+                        target.addfile(member, io.BytesIO(content))
+                    elif member.isfile():
+                        target.addfile(member, source.extractfile(member))
+                    else:
+                        target.addfile(member)
+
+            package = root / "game.deb"
+            build = self.build_package(conflicting, package)
+            self.assertNotEqual(build.returncode, 0)
+            self.assertIn("LinuxEngine.ini", build.stderr)
+            self.assertFalse(package.exists())
 
 
 if __name__ == "__main__":

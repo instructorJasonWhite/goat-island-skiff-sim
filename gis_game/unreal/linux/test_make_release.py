@@ -64,6 +64,9 @@ class LinuxReleaseTests(unittest.TestCase):
                 self.assertIn(prefix + "PLAY_ON_UBUNTU.md", names)
                 self.assertIn(prefix + "release-id.txt", names)
                 self.assertIn(prefix + "GISGame/Content/Paks/GISGame-Linux.pak", names)
+                linux_engine = prefix + "GISGame/Config/Linux/LinuxEngine.ini"
+                self.assertIn(linux_engine, names)
+                self.assertIn(b"r.PSOPrecache.GlobalShaders=0", bundle.extractfile(linux_engine).read())
                 self.assertEqual(bundle.extractfile(prefix + "release-id.txt").read(), b"0.1.0-test\n")
                 self.assertTrue(bundle.extractfile(prefix + "install.sh").read().startswith(b"#!/usr/bin/env bash\n"))
                 self.assertEqual(bundle.extractfile(prefix + "GISGame.sh").read(), b"#!/bin/sh\necho game\n")
@@ -76,6 +79,16 @@ class LinuxReleaseTests(unittest.TestCase):
             staged = root / "staged"
             staged.mkdir()
             with self.assertRaisesRegex(ValueError, "GISGame.sh"):
+                make_release.build_release(staged, root / "release.tar.gz", "0.1.0-test")
+
+    def test_conflicting_staged_linux_config_is_rejected(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            staged = make_stage(root)
+            linux_config = staged / "GISGame/Config/Linux/LinuxEngine.ini"
+            linux_config.parent.mkdir(parents=True)
+            linux_config.write_text("[ConsoleVariables]\nr.PSOPrecache.GlobalShaders=1\n", encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "LinuxEngine.ini"):
                 make_release.build_release(staged, root / "release.tar.gz", "0.1.0-test")
 
     def test_placeholder_or_wrong_architecture_binary_is_rejected(self):
@@ -181,6 +194,9 @@ class LinuxReleaseTests(unittest.TestCase):
             companions.mkdir()
             (companions / "install.sh").write_bytes(b"#!/usr/bin/env bash\r\necho install\r\n")
             (companions / "PLAY_ON_UBUNTU.md").write_text("Play", encoding="utf-8")
+            linux_config = root / "Config/Linux/LinuxEngine.ini"
+            linux_config.parent.mkdir(parents=True)
+            linux_config.write_text("[ConsoleVariables]\nr.PSOPrecache.GlobalShaders=0\n", encoding="utf-8")
             with patch.object(make_release, "__file__", str(companions / "make_release.py")):
                 archive = make_release.build_release(staged, root / "release.tar.gz", "0.1.0-test")
             with tarfile.open(archive, "r:gz") as bundle:
